@@ -1,39 +1,17 @@
-var functionName = function( userInput ) {
+var Pizza = {
+    pizzaProp: function ( size, type ) {
+      this.size = size,
+      this.type = type;
+    },
 
-// ???
+    pizzaSlice: function () {
+      if ( this.size > 14 && this.type === "cheese" ) {
+        return 10;
+      } else if ( this.size > 10 && this.type === "cheese") {
+        return 8;
+      } else if ( this.size > 6 && this.type === "cheese") {
+        return 6;
+      }
 
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$(document).ready(function() {
-  $("form#name_of_form").submit(function(event) {
-
-      var input1 = $("input#user_input").val();
-      var result = functionName(input1);
-
-      $(".user_input").text(input1);
-      $(".result_span").text(result);
-
-      $("#results").show();
-      event.preventDefault();
-  });
-
-});
+    }
+  }
