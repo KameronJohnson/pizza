@@ -17,7 +17,7 @@ describe("Pizza", function() {
   });
 
   describe("pizzaValid", function() {
-    it("tells user if input is invalid", function() {
+    it("tells user if input is valid", function() {
       var testPizza = Object.create(Pizza);
       testPizza.pizzaProps(5, "Pepperoni");
       expect(testPizza.pizzaValid()).to.equal(false);
