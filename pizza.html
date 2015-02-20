@@ -5,25 +5,27 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.11.2.js"></script>
     <script src="js/scripts.js"></script>
-    <title>Pizza!</title>
+    <title>Kam's Pizza Shoppe</title>
   </head>
   <body>
     <div class="container">
-      <h1>Pizza!</h1>
+      <h1>Kam's Pizza Shoppe</h1>
 
       <form id="new-pizza">
         <br>
         <div class="form-group">
-          <label for="input-size">Enter size of desired pizza (inches):</label>
-          <input id="input-size" type="text" placeholder="20" class="form-control">
+          <label for="size">Enter size of desired pizza (inches):</label>
+          <input id="size" type="text" placeholder="20" class="form-control">
 
-          <label for="input-type">Type:</label>
-          <select class="form-control" id="input-type" required>
+          <label for="type">Type:</label>
+          <select class="form-control" id="type" required>
             <option value="" selected="selected">Select</option>
             <option value="Cheese">Cheese</option>
             <option value="Pepperoni">Pepperoni</option>
+            <option value="Vegan">Vegan</option>
+            <option value="Supreme">Supreme</option>
+            <option value="Mystery">Mystery</option>
           </select>
-
         </div>
 
         <button type="submit" class="btn btn-md btn-warning">Go!</button>
@@ -32,7 +34,6 @@
 
       <div id="show-pizza">
         <h4></h4>
-
       </div>
 
       <div id="invalid">

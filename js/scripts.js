@@ -4,7 +4,7 @@ var Pizza = {
       this.type = type;
     },
 
-    pizzaSlice: function () {
+    pizzaSlices: function () {
       if ( this.size > 14 ) {
         return 10;
       } else if ( this.size >= 10 ) {
@@ -25,22 +25,20 @@ var Pizza = {
 $(document).ready(function() {
   $("form#new-pizza").submit(function(event) {
 
-
-
-    var inputtedSize = parseInt($("input#input-size").val());
-    var inputtedType = $("input#input-type").val();
-
-    $("#input-size").val("");
+    var inputtedSize = parseInt($("input#size").val());
+    var inputtedType = $("input#type").val();
 
     var newPizza = Object.create(Pizza);
     newPizza.pizzaProps(inputtedSize, inputtedType);
 
+    $("input#size").val("");
+
     if (newPizza.pizzaValid()) {
-      var slices = newPizza.pizzaSlice();
-      $("#show-pizza h4").text("Your pizza is " + slices + " slices. Pig out!" )
+      var slicesNumber = newPizza.pizzaSlices();
+      $("#show-pizza h4").text("Your " + newPizza.size + " inch pizza is " + slicesNumber + " slices. Pig out!" )
       $("#show-pizza").show();
     } else {
-      $("#invalid h4").text("Enter a valid size.")
+      $("#invalid h4").text("Enter a valid size between 6-22 inches, refresh page and try again.")
       $("#invalid").show()
     }
     event.preventDefault();
